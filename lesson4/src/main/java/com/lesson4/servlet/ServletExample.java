@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ServletExample extends HttpServlet {
 
-    private MyCalcForServlet calc = new MyCalcForServlet();
+    private MyCalcServlet calc = new MyCalcServlet();
     private String expression;
 
 

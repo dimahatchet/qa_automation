@@ -2,7 +2,7 @@ package com.lesson4.servlet;
 
 import java.util.*;
 
-public class MyCalcForServlet {
+public class MyCalcServlet {
 
     public static long calculateExpression(String expression) {
 
