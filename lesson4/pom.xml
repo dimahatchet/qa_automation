@@ -5,7 +5,7 @@
   <artifactId>lesson4</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>lesson4 Maven Webapp</name>
+  <name>lesson4 Maven WebApp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -20,6 +20,17 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>5.0.4.RELEASE</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>commons-logging</groupId>
+                  <artifactId>commons-logging</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
   </dependencies>
   <build>
     <finalName>lesson4</finalName>
