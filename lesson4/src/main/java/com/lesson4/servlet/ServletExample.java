@@ -20,6 +20,7 @@ public class ServletExample extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
     {
+
         expression = req.getQueryString();
     }
 }
