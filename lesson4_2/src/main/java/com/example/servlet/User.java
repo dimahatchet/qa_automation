@@ -1,4 +1,4 @@
-package com.lesson4.servlet;
+package com.example.servlet;
 
 public class User {
 
@@ -15,14 +15,15 @@ public class User {
     public User(String name) {
         this.name = name;
     }
+
     @Override
     public String toString() {
         return "name" + name;
     }
 
     public static User create(final String name) {
-        String realName = name.substring(name.indexOf("=")+1);
+        String realName = name.substring(name.indexOf("=") + 1);
         return new User(realName);
     }
-
 }
+

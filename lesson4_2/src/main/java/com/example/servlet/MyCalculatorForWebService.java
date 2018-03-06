@@ -1,10 +1,10 @@
-package com.lesson4.servlet;
+package com.example.servlet;
 
 import java.util.*;
 
-public class MyCalcServlet {
+public class MyCalculatorForWebService {
 
-    public static long calculateExpression(String expression) {
+        public static long calculateExpression(String expression) {
 
         Stack<Long> operandStack = new Stack();
         Stack<Character> operatorStack = new Stack();
@@ -65,7 +65,7 @@ public class MyCalcServlet {
 
     }
 
-    public static void performArithmeticOperation(Stack<Long> operandStack, Stack<Character> operatorStack) {
+        public static void performArithmeticOperation(Stack<Long> operandStack, Stack<Character> operatorStack) {
         try {
             long value1 = operandStack.pop();
             long value2 = operandStack.pop();
@@ -80,7 +80,7 @@ public class MyCalcServlet {
     }
 
 
-    public static boolean checkPrecedence(Character operator1, Character operator2) {
+        public static boolean checkPrecedence(Character operator1, Character operator2) {
 
         List<Character> precedenceList = new ArrayList();
         precedenceList.add('(');
@@ -104,7 +104,7 @@ public class MyCalcServlet {
 
     }
 
-    public static long arithmeticOperation(long value2, long value1, Character operator) {
+        public static long arithmeticOperation(long value2, long value1, Character operator) {
 
         long result;
 
@@ -139,7 +139,7 @@ public class MyCalcServlet {
     }
 
 
-    public static boolean isValidExpression(String expression) {
+        public static boolean isValidExpression(String expression) {
 
         if ((!Character.isDigit(expression.charAt(0)) && !(expression.charAt(0) == '('))
                 || (!Character.isDigit(expression.charAt(expression.length() - 1)) && !(expression.charAt(expression.length() - 1) == ')'))) {
@@ -183,4 +183,4 @@ public class MyCalcServlet {
             return false;
         }
     }
-}
+    }
