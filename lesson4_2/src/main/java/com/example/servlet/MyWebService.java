@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class MyWebService extends HttpServlet{
+public class MyWebService extends HttpServlet {
 
 
     private MyCalculatorForWebService calc = new MyCalculatorForWebService();
@@ -13,8 +13,13 @@ public class MyWebService extends HttpServlet{
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-        expression = req.getQueryString();
-        resp.setStatus(200);
-        resp.getOutputStream().print(calc.calculateExpression(expression));
+        resp.setContentType("text/html; charset=UTF-8");
+        expression = req.getParameter("expression");
+        if (expression == null || expression.length()== 0) {
+            resp.getOutputStream().println("Empty expression");}
+            else if (calc.isValidExpression(expression)){
+                resp.getOutputStream().print(calc.calculateExpression(expression));
+                resp.setStatus(200);
+            } else resp.getOutputStream().println("Not valid expression");
     }
 }

@@ -5,12 +5,23 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>WebService</servlet-name>
+    <servlet-name>MyWebService</servlet-name>
     <servlet-class>com.example.servlet.MyWebService</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>WebService</servlet-name>
+    <servlet-class>com.example.servlet.WebService</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MyWebService</servlet-name>
+    <url-pattern>/evaluate</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>WebService</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/user</url-pattern>
   </servlet-mapping>
+
 </web-app>
