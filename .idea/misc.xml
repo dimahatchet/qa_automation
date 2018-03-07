@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/lesson4" />
     <file type="web" url="file://$PROJECT_DIR$/lesson4_2" />
+    <file type="web" url="file://$PROJECT_DIR$/lesson5Practise" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -10,11 +11,12 @@
         <option value="$PROJECT_DIR$/lesson2/pom.xml" />
         <option value="$PROJECT_DIR$/lesson3/pom.xml" />
         <option value="$PROJECT_DIR$/lesson4_2/pom.xml" />
+        <option value="$PROJECT_DIR$/lesson5Practise/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectResources">
     <resource url="http://jakarta.apache.org/log4j/" location="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

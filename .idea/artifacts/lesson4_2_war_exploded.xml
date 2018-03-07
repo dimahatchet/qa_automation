@@ -6,6 +6,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="lesson4_2" />
         </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="lesson3-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="lesson3" />
+          </element>
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/lesson4_2/target/lesson4_2/META-INF/MANIFEST.MF" />
