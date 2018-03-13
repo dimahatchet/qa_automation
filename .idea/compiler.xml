@@ -10,6 +10,7 @@
         <module name="lesson3" />
         <module name="lesson4_2" />
         <module name="lesson5Practise" />
+        <module name="lesson6" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="lesson4" target="1.5" />
       <module name="lesson4_2" target="1.5" />
       <module name="lesson5Practise" target="1.5" />
+      <module name="lesson6" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
