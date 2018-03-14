@@ -1,24 +1,25 @@
 package com.restAssuredTest;
 
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.response.Response;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class HWTest {
-
+@Ignore
     @Test
     public void test(){
-        Response response = RestAssured.given().baseUri("http://192.168.88.62:8080")
+        Response response = RestAssured.given().baseUri("http://localhost:8080")
                 .log().ifValidationFails()
                 .expect()
                 .statusCode(200)
                 .log().ifValidationFails()
                 .when()
-                .get("/Calculator");
+                .get("/lesson4_2");
 
-        String actualResp = response.asString();
-        String expectedResp = "Hello world";
+        String actualResp = response.getBody().print();
+        String expectedResp = "Example";
 
         Assert.assertEquals(expectedResp, actualResp);
     }

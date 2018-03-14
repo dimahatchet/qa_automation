@@ -19,7 +19,7 @@
       <module name="lesson4" target="1.5" />
       <module name="lesson4_2" target="1.5" />
       <module name="lesson5Practise" target="1.5" />
-      <module name="lesson6" target="1.5" />
+      <module name="lesson6" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -17,12 +17,14 @@ public class MyWebService extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         resp.setContentType("text/html; charset=UTF-8");
-        expression = req.getParameter("expression");
+        expression = req.getQueryString();
+        //expression = req.getParameter("expression");
         if (expression == null || expression.length()== 0) {
             resp.getOutputStream().println("Empty expression");}
             else if (calc.isValidExpression(expression)){
                 resp.getOutputStream().print(calc.calculateExpression(expression));
                 resp.setStatus(200);
-            } else resp.getOutputStream().println("Not valid expression");
+            }
+        else resp.getOutputStream().println("Not valid expression");
     }
 }

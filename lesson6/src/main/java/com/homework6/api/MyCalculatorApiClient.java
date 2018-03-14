@@ -1,6 +1,8 @@
 package com.homework6.api;
 
+import com.homework3.MyCalculator;
+
 public interface MyCalculatorApiClient {
 
-    public Integer getEvalute(String expression);
+     String getEvaluate(String expression);
 }
