@@ -17,7 +17,7 @@ public class ApacheClientImplementation implements MyCalculatorApiClient {
 
 
     public String getEvaluate(String expression) {
-        URI uri = URI.create(BASE_URI + expression);
+        URI uri = URI.create(BASE_URI + "?" + expression);
         HttpGet request = new HttpGet(uri);
         try (CloseableHttpResponse response = HttpClientBuilder.create().build().execute(request)) {
             if (response.getStatusLine().getStatusCode() != 200) {

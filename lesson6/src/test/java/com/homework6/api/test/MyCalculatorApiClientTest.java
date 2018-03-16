@@ -35,7 +35,7 @@ public class MyCalculatorApiClientTest {
     }
 
     @Test
-    public void testDirect(){
+    public void testDirectRestAssured(){
         Response response = RestAssured.given().baseUri("http://localhost:8080")
                 .urlEncodingEnabled(false)
                 .param("2+1")
