@@ -5,7 +5,7 @@ import io.restassured.RestAssured;
 
 public class RestAssuredClientImplementation implements MyCalculatorApiClient {
 
-    public String getEvaluate(String expression) {
+    public String Evaluate(String expression) {
         return RestAssured.given().baseUri("http://localhost:8080")
                 .contentType("text/html;charset=UTF-8")
                 .urlEncodingEnabled(false)

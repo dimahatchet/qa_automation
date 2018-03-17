@@ -16,7 +16,7 @@ public class ApacheClientImplementation implements MyCalculatorApiClient {
     private static final String BASE_URI = "http://localhost:8080/lesson4_2/evaluate";
 
 
-    public String getEvaluate(String expression) {
+    public String Evaluate(String expression) {
         URI uri = URI.create(BASE_URI + "?" + expression);
         HttpGet request = new HttpGet(uri);
         try (CloseableHttpResponse response = HttpClientBuilder.create().build().execute(request)) {

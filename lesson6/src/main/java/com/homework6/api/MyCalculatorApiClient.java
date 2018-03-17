@@ -4,5 +4,5 @@ import com.homework3.MyCalculator;
 
 public interface MyCalculatorApiClient {
 
-     String getEvaluate(String expression);
+     String Evaluate(String expression);
 }
