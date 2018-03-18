@@ -55,7 +55,7 @@ public class StarWarsApiTestsApache {
     @Test
     public void checkLukeOnWookiee() {
         String expectedName = "Lhuorwo Sorroohraanorworc";
-        String actualName = apiClientPeopleWookiee.getByIdWookie(1).getResponse().getName();
+        String actualName = apiClientPeopleWookiee.getByIdWookiee(1).getResponse().getName();
         Assert.assertEquals(expectedName, actualName);
     }
 }

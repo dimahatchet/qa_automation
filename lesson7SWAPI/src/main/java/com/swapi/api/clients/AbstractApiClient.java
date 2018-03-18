@@ -29,12 +29,13 @@ public abstract class AbstractApiClient<T> {
     public SWApiHttpResponse<T> getById(final String url){
         return getGenericResponse(url,entityType);
     }
-    public SWApiHttpResponse<T> getByIdWookie(final int entityId){
-        final String url = String.format("%s/%s/%d" + "/?format=wookiee", BASE_URL, getResourceName(), entityId);
-        return getById(url);
+    public SWApiHttpResponse<T> getByIdWookiee(final int entityId){
+        final String url = String.format("%s/%s/%d/%s", BASE_URL, getResourceName(), entityId, "?format=wookiee");
+        System.out.println(url);
+        return getByIdWookiee(url);
     }
 
-    public SWApiHttpResponse<T> getByIdWookie(final String url){
+    public SWApiHttpResponse<T> getByIdWookiee(final String url){
         return getGenericResponse(url,entityType);
     }
 

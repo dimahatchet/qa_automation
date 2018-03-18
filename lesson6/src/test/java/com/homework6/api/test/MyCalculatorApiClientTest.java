@@ -24,14 +24,14 @@ public class MyCalculatorApiClientTest {
     public void testRestAssured(){
         Integer expected = 3;
         RestAssuredClientImplementation apiClient = new RestAssuredClientImplementation();
-        Assert.assertEquals(expected, Integer.valueOf(apiClient.getEvaluate("2+1")));
+        Assert.assertEquals(expected, Integer.valueOf(apiClient.Evaluate("2+1")));
     }
 
     @Test
     public void testApacheClient(){
         Integer expected = 3;
         ApacheClientImplementation apiClient = new ApacheClientImplementation();
-        Assert.assertEquals(expected, Integer.valueOf(apiClient.getEvaluate("2+1")));
+        Assert.assertEquals(expected, Integer.valueOf(apiClient.Evaluate("2+1")));
     }
 
     @Test

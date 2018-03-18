@@ -7,9 +7,10 @@ import io.restassured.response.Response;
 
 public class RestAssuredRestApiEngine implements RestApiEngine {
     @Override
-    public ApiHttpResponse get(String url) {
+    public ApiHttpResponse get(final String url) {
         Response response = RestAssured.given()
                 .baseUri(url)
+                .log().all()
                 .contentType("application/json; charset=utf-8")
                 .expect()
                 .statusCode(200).log().all()

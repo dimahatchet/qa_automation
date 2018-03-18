@@ -18,6 +18,7 @@ public class ApacheRestApiEngine implements RestApiEngine {
     @Override
     public ApiHttpResponse get(final String url)
     {
+        //System.out.println(url);
         ApiHttpResponse apiResponse = new ApiHttpResponse();
         CloseableHttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(URI.create(url));
@@ -34,6 +35,7 @@ public class ApacheRestApiEngine implements RestApiEngine {
                 String line;
                 while ((line = rd.readLine()) != null) {
                     bodyBuilder.append(line);
+                   // System.out.println(line);
                 }
             }
             apiResponse.setBody(bodyBuilder.toString());
