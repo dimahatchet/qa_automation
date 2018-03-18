@@ -24,4 +24,12 @@ public class Planets implements Serializable {
     private ArrayList<String> residentsUrls;
     @SerializedName("films")
     private ArrayList<String> filmsUrls;
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<String> getFilmsUrls() {
+        return filmsUrls;
+    }
 }

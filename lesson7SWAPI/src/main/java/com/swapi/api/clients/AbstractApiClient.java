@@ -29,6 +29,14 @@ public abstract class AbstractApiClient<T> {
     public SWApiHttpResponse<T> getById(final String url){
         return getGenericResponse(url,entityType);
     }
+    public SWApiHttpResponse<T> getByIdWookie(final int entityId){
+        final String url = String.format("%s/%s/%d" + "/?format=wookiee", BASE_URL, getResourceName(), entityId);
+        return getById(url);
+    }
+
+    public SWApiHttpResponse<T> getByIdWookie(final String url){
+        return getGenericResponse(url,entityType);
+    }
 
     public SWApiHttpResponse<SWCollection<T>> getCollection(){
         final String url = String.format("%s/%s/", BASE_URL, getResourceName());

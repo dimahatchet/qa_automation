@@ -23,8 +23,10 @@ public class ApacheRestApiEngine implements RestApiEngine {
         HttpGet request = new HttpGet(URI.create(url));
 
         try(CloseableHttpResponse httpResponse = client.execute(request)){
-apiResponse.setStatusCode(httpResponse.getStatusLine().getStatusCode());
-apiResponse.setStatusMessage(httpResponse.getStatusLine().getReasonPhrase());
+
+            apiResponse.setStatusCode(httpResponse.getStatusLine().getStatusCode());
+            apiResponse.setStatusMessage(httpResponse.getStatusLine().getReasonPhrase());
+
             final StringBuilder bodyBuilder = new StringBuilder();
 
             try(InputStream in = httpResponse.getEntity().getContent()){
@@ -33,7 +35,6 @@ apiResponse.setStatusMessage(httpResponse.getStatusLine().getReasonPhrase());
                 while ((line = rd.readLine()) != null) {
                     bodyBuilder.append(line);
                 }
-
             }
             apiResponse.setBody(bodyBuilder.toString());
 

@@ -22,7 +22,7 @@
       <module name="lesson5Practise" target="1.5" />
       <module name="lesson6" target="1.7" />
       <module name="lesson7" target="1.5" />
-      <module name="lesson7SWAPI" target="1.6" />
+      <module name="lesson7SWAPI" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
