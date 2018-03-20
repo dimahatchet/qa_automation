@@ -22,7 +22,7 @@ public class UserAssertion extends AbstractAssert<UserAssertion,User> {
 
     public UserAssertion isOlderThen(final User other) {
         Assertions.assertThat(actual.getAge())
-                .withFailMessage("User can't buy alcohol: his age is {%d}",actual.getAge())
+                .withFailMessage(String.format("User can't buy alcohol: his age is {%d}",actual.getAge()))
                 .isGreaterThan(other.getAge());
         return this;
     }

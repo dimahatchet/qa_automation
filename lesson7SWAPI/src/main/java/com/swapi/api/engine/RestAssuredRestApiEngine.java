@@ -22,4 +22,21 @@ public class RestAssuredRestApiEngine implements RestApiEngine {
         apiResponse.setStatusMessage(response.getStatusLine());
         return apiResponse;
     }
+
+    @Override
+    public ApiHttpResponse get(String url, String param) {
+        Response response = RestAssured.given()
+                .baseUri(url).param(param).urlEncodingEnabled(false)
+                .log().all()
+                .contentType("application/json; charset=utf-8")
+                .expect()
+                .statusCode(200).log().all()
+                .when()
+                .get();
+        ApiHttpResponse apiResponse = response.as(ApiHttpResponse.class);
+        apiResponse.setBody(response.getBody().print());
+        apiResponse.setStatusCode(response.getStatusCode());
+        apiResponse.setStatusMessage(response.getStatusLine());
+        return apiResponse;
+    }
 }

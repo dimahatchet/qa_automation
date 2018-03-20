@@ -14,6 +14,7 @@ public abstract class AbstractApiClient<T> {
     private final Type collectionType;
     private final Type entityType;
     private static final String BASE_URL = "http://swapi.co/api";
+    private static final String WOOKIEE = "format=wookiee";
 
     AbstractApiClient(final RestApiEngine engine) {
         this.engine = engine;
@@ -31,13 +32,13 @@ public abstract class AbstractApiClient<T> {
     }
 
     public SWApiHttpResponse<T> getByIdWookiee(final int entityId){
-        final String url = String.format("%s/%s/%d/%s", BASE_URL, getResourceName(), entityId, "?format=wookiee");
+        final String url = String.format("%s/%s/%d", BASE_URL, getResourceName(), entityId);
         System.out.println(url);
         return getByIdWookiee(url);
     }
 
     public SWApiHttpResponse<T> getByIdWookiee(final String url){
-        return getGenericResponse(url,entityType);
+        return getGenericResponseWookie(url,entityType);
     }
 
     public SWApiHttpResponse<SWCollection<T>> getCollection(){
@@ -50,6 +51,15 @@ public abstract class AbstractApiClient<T> {
     }
     private <GT> SWApiHttpResponse<GT> getGenericResponse(final String url, final Type responseType){
         ApiHttpResponse httpResponse = engine.get(url);
+        SWApiHttpResponse<GT> response = new SWApiHttpResponse<>(httpResponse);
+        if (isSuccess(httpResponse.getStatusCode())){
+            response.setResponse(gson().fromJson(httpResponse.getBody(), responseType));
+        }
+        return response;
+    }
+
+    private <GT> SWApiHttpResponse<GT> getGenericResponseWookie(final String url, final Type responseType){
+        ApiHttpResponse httpResponse = engine.get(url, WOOKIEE);
         SWApiHttpResponse<GT> response = new SWApiHttpResponse<>(httpResponse);
         if (isSuccess(httpResponse.getStatusCode())){
             response.setResponse(gson().fromJson(httpResponse.getBody(), responseType));

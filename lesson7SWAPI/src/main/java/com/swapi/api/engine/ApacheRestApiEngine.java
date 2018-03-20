@@ -45,4 +45,34 @@ public class ApacheRestApiEngine implements RestApiEngine {
         }
         return apiResponse;
     }
+
+    @Override
+    public ApiHttpResponse get(String url, String param) {
+        get (url + "?" + param);
+        //System.out.println(url);
+        ApiHttpResponse apiResponse = new ApiHttpResponse();
+        CloseableHttpClient client = HttpClientBuilder.create().build();
+        HttpGet request = new HttpGet(URI.create(url+ "?"+ param));
+        try(CloseableHttpResponse httpResponse = client.execute(request)){
+
+            apiResponse.setStatusCode(httpResponse.getStatusLine().getStatusCode());
+            apiResponse.setStatusMessage(httpResponse.getStatusLine().getReasonPhrase());
+
+            final StringBuilder bodyBuilder = new StringBuilder();
+
+            try(InputStream in = httpResponse.getEntity().getContent()){
+                BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    bodyBuilder.append(line);
+                    // System.out.println(line);
+                }
+            }
+            apiResponse.setBody(bodyBuilder.toString());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return apiResponse;
+    }
 }
