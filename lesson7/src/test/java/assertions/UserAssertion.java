@@ -2,8 +2,6 @@ package assertions;
 
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
-import org.junit.Test;
 
 public class UserAssertion extends AbstractAssert<UserAssertion,User> {
 
