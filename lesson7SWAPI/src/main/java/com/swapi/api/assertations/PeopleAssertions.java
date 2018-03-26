@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions;
 
 public class PeopleAssertions extends AbstractAssert<PeopleAssertions,People> {
 
-    private UserAssertion(People user, Class<?> selfType) {
+    private PeopleAssertions(People user, Class<?> selfType) {
         super(user, selfType);
     }
 
@@ -21,8 +21,7 @@ public class PeopleAssertions extends AbstractAssert<PeopleAssertions,People> {
 
     public PeopleAssertions isOlderThen(final People other) {
         Assertions.assertThat(actual.getName())
-                .withFailMessage(String.format("User can't buy alcohol: his age is {%d}",actual.getName()))
-                .isGreaterThan(other.getName());
+                .withFailMessage(String.format("User can't buy alcohol: his age is {%d}",actual.getName())).isEqualTo(actual.getName());
         return this;
     }
 
